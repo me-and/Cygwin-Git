@@ -8,7 +8,7 @@
 inherit perl
 
 NAME="git"
-VERSION='2.28.0-rc0'
+VERSION='2.28.0-rc1'
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Distributed version control system"
@@ -139,5 +139,6 @@ src_test() {
 	# Skip failing t7006 tests.
 	skip_tests='t7006.6'
 
-	GIT_SKIP_TESTS=$skip_tests GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove GIT_PROVE_OPTS="--jobs $(($(nproc 2>/dev/null) + 1))" cygtest
+#	GIT_SKIP_TESTS=$skip_tests GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove GIT_PROVE_OPTS="--jobs $(($(nproc 2>/dev/null) + 1))" cygtest
+	GIT_SKIP_TESTS=$skip_tests GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove cygtest
 }
