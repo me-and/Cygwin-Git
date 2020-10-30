@@ -14,3 +14,7 @@ C:\cygwin64\bin\bash.exe -l -c "cd /cygdrive/d && git clone -b next https://gith
 # And compile
 C:\cygwin64\bin\bash.exe -l -c "cd /cygdrive/d/Cygwin-Git && cygport git.cygport prep compile test install package"
 C:\cygwin\bin\bash.exe -l -c "cd /cygdrive/d/Cygwin-Git && cygport git.cygport prep compile test install package"
+
+# And upload.  This is clearly not an automated process as it involves  human steps (uploading the key to the right place, entering the password, approving the host key).
+C:\cygwin64\bin\bash.exe -l -c "export SSH_KEY=/cygdrive/d/cygwin_rsa && { ssh cygwin@cygwin.com; cd /cygdrive/d/Cygwin-Git && cygport git.cygport upload; }"
+C:\cygwin\bin\bash.exe -l -c "export SSH_KEY=/cygdrive/d/cygwin_rsa && { ssh cygwin@cygwin.com; cd /cygdrive/d/Cygwin-Git && cygport git.cygport upload; }"
