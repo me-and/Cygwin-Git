@@ -18,3 +18,15 @@ jobs:
             pkg-config subversion-perl time xmlto zlib-devel
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Cygport download
+        run: "C:\\tools\\cygwin\\bin\\bash.exe -c 'cygport git.cygport download'"
+      - name: Cygport prep
+        run: "C:\\tools\\cygwin\\bin\\bash.exe -c 'cygport git.cygport prep'"
+      - name: Cygport compile
+        run: "C:\\tools\\cygwin\\bin\\bash.exe -c 'cygport git.cygport compile'"
+      - name: Cygport test
+        run: "C:\\tools\\cygwin\\bin\\bash.exe -c 'cygport git.cygport test'"
+      - name: Cygport install
+        run: "C:\\tools\\cygwin\\bin\\bash.exe -c 'cygport git.cygport install'"
+      - name: Cygport package
+        run: "C:\\tools\\cygwin\\bin\\bash.exe -c 'cygport git.cygport package'"
