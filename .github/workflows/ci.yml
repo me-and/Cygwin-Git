@@ -19,12 +19,14 @@ jobs:
             perl-IO-Socket-SSL perl-IO-Tty perl-MailTools perl-Net-SMTP-SSL
             perl-TermReadkey perl-Test-Harness perl-XML-SAX perl-YAML-Tiny
             pkg-config subversion-perl time xmlto zlib-devel
+      - name: Generate cygcheck output
+        run: 'C:\tools\cygwin\bin\bash.exe -c ''cygcheck -srv >/var/log/cygcheck.out'''
       - name: Store choco logs
         uses: actions/upload-artifact@v2
         with:
           name: choco-logs
           path: 'C:\ProgramData\chocolatey\logs\'
-      - name: Store Cygwin install logs
+      - name: Store Cygwin logs
         uses: actions/upload-artifact@v2
         with:
           name: cyg-install-logs
