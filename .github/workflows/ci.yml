@@ -9,3 +9,5 @@ jobs:
         with:
           platform: x64
           packages: asciidoc bash-completion bash-completion-devel cygport dblatex docbook-xml45 docbook2X gcc-core gettext gettext-devel git gnupg gnupg2 libcurl-devel libexpat-devel libiconv libiconv-devel libpcre-devel libssl-devel perl-Authen-SASL-XS perl-DBD-SQLite perl-IO-Socket-SSL perl-IO-Tty perl-MailTools perl-Net-SMTP-SSL perl-TermReadkey perl-Test-Harness perl-XML-SAX perl-YAML-Tiny pkg-config subversion-perl time xmlto zlib-devel
+      - name: Checkout
+        uses: actions/checkout@v2
