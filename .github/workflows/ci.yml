@@ -19,6 +19,11 @@ jobs:
             perl-IO-Socket-SSL perl-IO-Tty perl-MailTools perl-Net-SMTP-SSL
             perl-TermReadkey perl-Test-Harness perl-XML-SAX perl-YAML-Tiny
             pkg-config subversion-perl time xmlto zlib-devel
+      - name: Store choco logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: choco-logs
+          path: 'C:\ProgramData\chocolatey\logs\'
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cygport download
