@@ -15,7 +15,7 @@ jobs:
           $pkgs = Get-Content -Path .\build-requires.txt
           echo "::set-output name=packages::$pkgs"
       - name: Install Cygwin
-        uses: me-and/setup-cygwin@test-blocking
+        uses: egor-tensin/setup-cygwin@v2
         with:
           platform: ${{ matrix.platform }}
           packages: ${{ steps.cyg-package-list.outputs.packages }}
