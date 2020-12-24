@@ -7,6 +7,11 @@ jobs:
         platform: [x64, x86]
     runs-on: windows-latest
     steps:
+      - name: Install Cygwin git
+        uses: egor-tensin/setup-cygwin@v2
+        with:
+          platform: ${{ matrix.platform }}
+          packages: git
       - name: Checkout
         uses: actions/checkout@v2
       - name: Load packages to install
