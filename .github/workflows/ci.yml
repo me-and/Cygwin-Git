@@ -8,7 +8,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Install Cygwin
-        uses: egor-tensin/setup-cygwin@v2
+        uses: me-and/setup-cygwin@test-blocking
         with:
           platform: ${{ matrix.platform }}
           packages: >
