@@ -11,7 +11,7 @@ jobs:
         uses: me-and/setup-cygwin@test-blocking
         with:
           platform: ${{ matrix.platform }}
-          packages: asciidoc bash-completion bash-completion-devel cygport dblatex docbook-xml45 docbook2X gcc-core gettext gettext-devel git gnupg gnupg2 libcurl-devel libexpat-devel libiconv libiconv-devel libpcre-devel libssl-devel perl-Authen-SASL-XS perl-DBD-SQLite perl-IO-Socket-SSL perl-IO-Tty perl-MailTools perl-Net-SMTP-SSL perl-TermReadkey perl-Test-Harness perl-XML-SAX perl-YAML-Tiny pkg-config subversion-perl time xmlto zlib-devel
+          packages: asciidoc bash-completion bash-completion-devel cygport dblatex docbook-xml45 docbook2X gcc-core gettext gettext-devel git gnupg gnupg2 libcurl-devel libexpat-devel libiconv libiconv-devel libpcre-devel libssl-devel perl-Authen-SASL-XS perl-DBD-SQLite perl-IO-Socket-SSL perl-IO-Tty perl-MailTools perl-Net-SMTP-SSL perl-TermReadkey perl-Test-Harness perl-XML-SAX perl-YAML pkg-config subversion-perl time xmlto zlib-devel
       - name: Generate cygcheck output
         run: 'C:\tools\cygwin\bin\bash.exe -c ''cygcheck -srv >/var/log/cygcheck.out'' | Out-Default'
       - name: Store choco logs
