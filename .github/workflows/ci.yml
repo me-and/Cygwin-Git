@@ -21,7 +21,7 @@ jobs:
             pkg-config subversion-perl time xmlto zlib-devel
       - name: Generate cygcheck output
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygcheck -srv >/var/log/cygcheck.out' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygcheck -srv >/var/log/cygcheck.out'
       - name: Store choco logs
         uses: actions/upload-artifact@v2
         with:
@@ -36,19 +36,19 @@ jobs:
         uses: actions/checkout@v2
       - name: Cygport download
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport download' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport download'
       - name: Cygport prep
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport prep' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport prep'
       - name: Cygport compile
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport compile' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport compile'
       - name: Cygport test
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport test' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport test'
       - name: Cygport install
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport install' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport install'
       - name: Cygport package
         run: |
-          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport package' | Out-Default
+          C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport package'
