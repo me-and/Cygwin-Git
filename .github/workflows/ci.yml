@@ -22,16 +22,19 @@ jobs:
       - name: Generate cygcheck output
         run: |
           C:\tools\cygwin\bin\bash.exe -c 'cygcheck -srv >/var/log/cygcheck.out'
+        if: always()
       - name: Store choco logs
         uses: actions/upload-artifact@v2
         with:
           name: choco-logs
           path: 'C:\ProgramData\chocolatey\logs\'
+        if: always()
       - name: Store Cygwin logs
         uses: actions/upload-artifact@v2
         with:
-          name: cyg-install-logs
+          name: cygwin-logs
           path: 'C:\tools\cygwin\var\log\'
+        if: always()
       - name: Cygport download
         run: |
           C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport download'
