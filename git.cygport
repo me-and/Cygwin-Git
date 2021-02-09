@@ -8,7 +8,7 @@
 inherit perl
 
 NAME="git"
-VERSION=2.29.2
+VERSION=2.30.1
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="Distributed version control system"
@@ -22,7 +22,7 @@ HOMEPAGE="https://git-scm.com/"
 SRC_URI="https://git.kernel.org/pub/scm/git/git.git/snapshot/${PN}-v${PV}.tar.gz"
 SRC_DIR="${PN}-v${PV}"
 
-PATCH_URI="1.8.5.2-cygwin.patch"
+PATCH_URI="1.8.5.2-cygwin.patch fix-t4129.patch"
 
 BUILD_REQUIRES="$(tr '\n' ' ' <build-requires.txt)"
 
