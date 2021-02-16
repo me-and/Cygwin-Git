@@ -52,6 +52,7 @@ jobs:
       - name: Cygport test
         run: |
           C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport test'
+        timeout-minutes: 300
       - name: Cygport install
         run: |
           C:\tools\cygwin\bin\bash.exe -c 'cygport git.cygport install'
