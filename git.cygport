@@ -103,6 +103,9 @@ src_test() {
 	cp ${S}/t/t4018/* ${B}/t/t4018
 	cd ${B}
 
+	# On 64-bit only, skip t0021, since it seems to hang.
+	[[ "$ARCH_x86_64" ]] && skip_tests="${skip_tests}${skip_tests:+ }t0021"
+
 	# Skip failing t7006 tests.
 	skip_tests="${skip_tests}${skip_tests:+ }t7006.6"
 
@@ -110,6 +113,9 @@ src_test() {
 	skip_tests="${skip_tests}${skip_tests:+ }t7900"
 
 	GIT_SKIP_TESTS="$skip_tests" GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove GIT_PROVE_OPTS="--jobs 1" cygtest
+
+	# Run t0021 verbosely if it was skipped earlier.
+	[[ "$ARCH_x64_64" ]] && ( cd ${B}/t && ./t0021-*.sh -lx; )
 
 	# Run t7900 if there's at least 10GB free disk space
 	if (( $(($(stat -f --format="%a*%S" .) / 1024 / 1024 / 1024)) > 10 )); then
