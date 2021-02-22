@@ -103,7 +103,9 @@ src_test() {
 	cp ${S}/t/t4018/* ${B}/t/t4018
 	cd ${B}
 
-	# On 64-bit only, skip t0021, since it seems to hang.
+	# On 64-bit only, skip t0021, since it seems to hang when run through
+	# prove in GitHub Actions.  Run it later, outside prove, where it
+	# doesn't have that problem.
 	[[ "$ARCH_x86_64" ]] && skip_tests="${skip_tests}${skip_tests:+ }t0021"
 
 	# Skip failing t7006 tests.
