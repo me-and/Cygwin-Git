@@ -114,7 +114,7 @@ src_test() {
 	# Skip t7900 since it requires an excessive amount of disk space.
 	skip_tests="${skip_tests}${skip_tests:+ }t7900"
 
-	GIT_SKIP_TESTS="$skip_tests" GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove GIT_PROVE_OPTS="--jobs 1" cygtest
+	GIT_SKIP_TESTS="$skip_tests" GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove GIT_PROVE_OPTS="--jobs 1 --timer" cygtest
 
 	# Run t0021 verbosely if it was skipped earlier.
 	[[ "$ARCH_x64_64" ]] && ( cd ${B}/t && ./t0021-*.sh -lx; )
