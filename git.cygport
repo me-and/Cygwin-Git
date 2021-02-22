@@ -116,6 +116,10 @@ src_test() {
 
 	GIT_SKIP_TESTS="$skip_tests" GIT_TEST_OPTS='--tee -l' DEFAULT_TEST_TARGET=prove GIT_PROVE_OPTS="--jobs 1 --timer" cygtest
 
+	# Check the test results by checking the recorded return codes, since
+	# the previous command seems to always succeed.
+	! grep -qv 0 "${B}"/t/test-results/*.exit
+
 	# Run t0021 verbosely if it was skipped earlier.
 	[[ "$ARCH_x64_64" ]] && ( cd ${B}/t && ./t0021-*.sh -lx; )
 
